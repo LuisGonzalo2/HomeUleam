@@ -1,19 +1,24 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    background-image: url("../photo/FondoUleam.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 .container {
     max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     text-align: center;
+    color: #333;
+    margin-bottom: 30px;
 }
 
 form {
@@ -22,21 +27,24 @@ form {
 }
 
 label {
-    margin-top: 10px;
+    margin-top: 15px;
+    color: #333;
 }
 
 input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+select {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: #fff;
 }
 
 button {
     padding: 10px;
     margin-top: 20px;
-    background-color: #4CAF50;
+    background-color: #db6666;
     color: white;
     border: none;
     border-radius: 4px;
@@ -44,5 +52,15 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #db6666;
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    color: #db6666;
+    text-decoration: none;
 }
