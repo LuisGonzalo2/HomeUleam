@@ -1,4 +1,3 @@
-// Obtener referencias a los elementos del formulario
 const form = document.querySelector('form');
 const nombre = document.getElementById('nombre');
 const cedula = document.getElementById('cedula');
@@ -7,12 +6,14 @@ const nickname = document.getElementById('nickname');
 const genero = document.getElementById('genero');
 const password = document.getElementById('password');
 const confirmacion = document.getElementById('confirmacion');
+const passwordInput = document.getElementById('password');
+const passwordBar = document.getElementById('password-bar');
 
-// Agregar un evento de escucha al formulario cuando se envíe
+passwordInput.addEventListener('input', updatePasswordBar);
+
 form.addEventListener('submit', function(event) {
-    event.preventDefault(); // Evitar el envío del formulario por defecto
+    event.preventDefault();
 
-    // Validar los campos del formulario
     if (nombre.value.trim() === '') {
         mostrarError(nombre, 'Por favor, ingrese su nombre');
         return;
@@ -20,6 +21,12 @@ form.addEventListener('submit', function(event) {
 
     if (cedula.value.trim() === '') {
         mostrarError(cedula, 'Por favor, ingrese su cédula');
+        return;
+    } else if (cedula.value.length !== 13) {
+        mostrarError(cedula, 'La cédula debe tener exactamente 13 dígitos');
+        return;
+    } else if (!/^[0-9]+$/.test(cedula.value)) {
+        mostrarError(cedula, 'La cédula solo puede contener números');
         return;
     }
 
@@ -53,14 +60,38 @@ form.addEventListener('submit', function(event) {
         return;
     }
 
-    // Si todos los campos son válidos, enviar el formulario
     form.submit();
 });
 
-// Función para mostrar un mensaje de error
 function mostrarError(campo, mensaje) {
     const errorElement = document.createElement('div');
     errorElement.className = 'error';
     errorElement.textContent = mensaje;
     campo.parentElement.insertBefore(errorElement, campo.nextSibling);
+}
+
+function checkPasswordBar(password) {
+    const weakPassword = /^(?=.*[a-z])[a-z0-9]{6,}$/;
+    const mediumPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+    const strongPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    if (strongPassword.test(password)) {
+        return 'strong';
+    } else if (mediumPassword.test(password)) {
+        return 'medium';
+    } else if (weakPassword.test(password)) {
+        return 'weak';
+    } else {
+        return '';
+    }
+}
+
+function updatePasswordBar() {
+    const passwordValue = passwordInput.value;
+    const passwordLevel = checkPasswordBar(passwordValue);
+    passwordBar.classList.remove('weak', 'medium', 'strong');
+
+    if (passwordValue.length > 0) {
+        passwordBar.classList.add(passwordLevel);
+    }
 }
