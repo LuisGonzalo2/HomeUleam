@@ -8,6 +8,7 @@ const password = document.getElementById('password');
 const confirmacion = document.getElementById('confirmacion');
 const passwordInput = document.getElementById('password');
 const passwordBar = document.getElementById('password-bar');
+const passwordBarMessage = document.getElementById('password-bar-message');
 
 passwordInput.addEventListener('input', updatePasswordBar);
 
@@ -76,22 +77,38 @@ function checkPasswordBar(password) {
     const strongPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
     if (strongPassword.test(password)) {
-        return 'strong';
+        return { strength: 'strong', message: 'Contraseña fuerte' };
     } else if (mediumPassword.test(password)) {
-        return 'medium';
+        return { strength: 'medium', message: 'Contraseña media' };
     } else if (weakPassword.test(password)) {
-        return 'weak';
+        return { strength: 'weak', message: 'Contraseña débil' };
     } else {
-        return '';
+        return { strength: '', message: '' };
     }
 }
 
 function updatePasswordBar() {
     const passwordValue = passwordInput.value;
-    const passwordLevel = checkPasswordBar(passwordValue);
+    const { strength, message } = checkPasswordBar(passwordValue);
+
     passwordBar.classList.remove('weak', 'medium', 'strong');
+    passwordBarMessage.textContent = '';
 
     if (passwordValue.length > 0) {
-        passwordBar.classList.add(passwordLevel);
+        passwordBar.classList.add(strength);
+        passwordBarMessage.textContent = message;
+    }
+}
+
+function togglePasswordVisibility() {
+    const passwordInput = document.getElementById('password');
+    const passwordToggle = document.querySelector('.password-toggle');
+
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        passwordToggle.textContent = '👁️';
+    } else {
+        passwordInput.type = 'password';
+        passwordToggle.textContent = '👁️';
     }
 }
