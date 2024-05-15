@@ -1,0 +1,259 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+.login-btn {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #ffa500;
+}
+
+/* Estilos de la sección hero */
+.hero {
+    background-image: url('../photo/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.cta-button-container {
+    position: relative;
+    display: inline-block;
+    perspective: 1000px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #ffcc00;
+    color: #333;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+}
+
+.cta-button-bg,
+.cta-button-bg2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    transform: rotateX(60deg);
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
+    z-index: 0;
+}
+
+.cta-button-bg {
+    background-color: rgba(255, 204, 0, 0.4);
+}
+
+.cta-button-bg2 {
+    background-color: rgba(255, 165, 0, 0.4);
+    animation: waveAnimation 2s infinite ease-in-out;
+}
+
+.cta-button-container:hover .cta-button-bg,
+.cta-button-container:hover .cta-button-bg2 {
+    transform: rotateX(0deg);
+}
+
+@keyframes waveAnimation {
+    0% {
+        transform: rotateX(60deg) translateY(0);
+    }
+    50% {
+        transform: rotateX(60deg) translateY(-10px);
+    }
+    100% {
+        transform: rotateX(60deg) translateY(0);
+    }
+}
+
+/* Estilos de la sección de características */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+}
+
+.feature {
+    text-align: center;
+    max-width: 300px;
+}
+
+.feature img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.feature h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 16px;
+    color: #777;
+}
+
+/* Estilos de la sección de testimonios */
+.testimonials {
+    background-color: #f2f2f2;
+    padding: 50px;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.testimonial-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonial {
+    max-width: 600px;
+    padding: 20px;
+    margin: 0 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.testimonial .author {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-content .logo a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.social-media a {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #ffcc00;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+}
