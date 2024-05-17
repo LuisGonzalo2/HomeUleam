@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitud y Reserva - Residencia Universitaria</title>
+  <link rel="stylesheet" href="css/booking.css">
+</head>
+<body>
+<header>
+  <nav>
+    <div class="logo">
+      <a href="home.html">Residencia Universitaria</a>
+    </div>
+    <ul>
+      <li><a href="home.html">Inicio</a></li>
+      <li><a href="about.html">Acerca de</a></li>
+      <li><a href="services.html">Servicios</a></li>
+      <li><a href="booking.html" class="active">Solicitud y Reserva</a></li>
+      <li><a href="news.html">Noticias y Blog</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+      <li><a href="profile.html" class="profile-btn">Mi Perfil</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="booking">
+    <div class="container">
+      <h1>Solicitud y Reserva</h1>
+      <form id="booking-form">
+        <div class="form-group">
+          <label for="check-in">Fecha de llegada:</label>
+          <input type="date" id="check-in" name="check-in" required>
+        </div>
+        <div class="form-group">
+          <label for="check-out">Fecha de salida:</label>
+          <input type="date" id="check-out" name="check-out" required>
+        </div>
+        <div class="form-group">
+          <label for="room-type">Tipo de habitación:</label>
+          <select id="room-type" name="room-type" required>
+            <option value="">Seleccione una opción</option>
+            <option value="individual">Individual</option>
+            <option value="doble">Doble</option>
+            <option value="compartida">Compartida</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="num-roommates">Número de compañeros de habitación:</label>
+          <input type="number" id="num-roommates" name="num-roommates" min="0" max="3" required>
+        </div>
+        <div class="form-group">
+          <label for="payment-method">Método de pago:</label>
+          <select id="payment-method" name="payment-method" required>
+            <option value="">Seleccione una opción</option>
+            <option value="tarjeta">Tarjeta de crédito/débito</option>
+            <option value="transferencia">Transferencia bancaria</option>
+            <option value="efectivo">Efectivo</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="additional-comments">Comentarios adicionales:</label>
+          <textarea id="additional-comments" name="additional-comments"></textarea>
+        </div>
+        <button type="button" id="next-btn">Siguiente</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2023 Residencia Universitaria. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script src="js/booking.js"></script>
+</body>
+</html>
