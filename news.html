@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias y Blog - Residencia Universitaria</title>
+    <link rel="stylesheet" href="css/news.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="home.html">Residencia Universitaria</a>
+            </div>
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="about.html">Acerca de</a></li>
+                <li><a href="services.html">Servicios</a></li>
+                <li><a href="news.html" class="active">Noticias y Blog</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+                <li><a href="login.html" class="login-btn">Iniciar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="news">
+            <div class="container">
+                <h1>Noticias y Blog</h1>
+                <div class="news-items">
+                    <article class="news-item">
+                        <img src="/photo/news/news1.jpg" alt="Noticia 1">
+                        <h2>Inauguración de Nuevas Instalaciones en la Residencia Universitaria</h2>
+                        <p>Nos complace anunciar la apertura de nuestras nuevas instalaciones, que incluyen un moderno gimnasio, una sala de estudio equipada con la última tecnología y un salón de juegos...</p>
+                        <a href="#" class="read-more" data-news="1">Leer más</a>
+                    </article>
+                    <article class="news-item">
+                        <img src="/photo/news/news2.jpg" alt="Noticia 2">
+                        <h2>Programa de Actividades de Verano para Residentes</h2>
+                        <p>Este verano, la residencia universitaria ofrece una serie de actividades diseñadas para enriquecer la experiencia de nuestros residentes...</p>
+                        <a href="#" class="read-more" data-news="2">Leer más</a>
+                    </article>
+                    <article class="news-item">
+                        <img src="/photo/news/news3.jpg" alt="Noticia 3">
+                        <h2>Consejos de Seguridad y Protocolos de Emergencia</h2>
+                        <p>La seguridad de nuestros residentes es nuestra máxima prioridad. Hemos actualizado nuestros protocolos de emergencia y queremos recordarles algunos consejos importantes...</p>
+                        <a href="#" class="read-more" data-news="3">Leer más</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <div id="news-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Residencia Universitaria. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/news.js"></script>H
+</body>
+</html>

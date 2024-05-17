@@ -61,7 +61,7 @@ nav ul li a:hover {
 
 /* Estilos de la sección hero */
 .hero {
-    background-image: url('../photo/hero.jpg');
+    background-image: url('../photo/main/hero.jpg');
     background-size: cover;
     background-position: center;
     height: 500px;
